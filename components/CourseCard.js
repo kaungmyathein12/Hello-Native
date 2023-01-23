@@ -1,11 +1,9 @@
 import { Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { View } from "react-native";
 
 const CourseCard = ({ imgUrl, title }) => {
   return (
     <TouchableOpacity className="mr-4 relative">
-      {/* <View className="bg-[#ff6b88] w-80 h-52 "></View> */}
       <Image
         source={{
           uri: imgUrl,

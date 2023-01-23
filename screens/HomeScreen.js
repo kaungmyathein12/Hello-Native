@@ -1,19 +1,8 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  TextInput,
-  ScrollView,
-} from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import {
-  UserIcon,
-  ChevronDownIcon,
-  AdjustmentsVerticalIcon,
-  MagnifyingGlassIcon,
-} from "react-native-heroicons/outline";
+
+import TopCourse from "../components/TopCourse";
 const HomeScreen = () => {
   const navigation = useNavigation();
   useLayoutEffect(() => {
@@ -22,35 +11,24 @@ const HomeScreen = () => {
     });
   }, []);
   return (
-    <SafeAreaView className="bg-white">
+    <SafeAreaView className="bg-[#6b61ff] pt-5">
       {/* Header */}
-      <View className="mx-4 flex-row justify-between items-center pb-3">
-        <View className="flex-row items-center space-x-2">
-          <Image
-            source={{
-              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1nHJJVocQbAdfUQHDEXeVu0V8MJqnnacJvQ&usqp=CAU",
-            }}
-            className="h-9 w-9 rounded-md"
-          />
+      <View className="mx-4 flex-row justify-between items-center pt-2 pb-6">
+        <View>
+          <Text className="text-2xl font-bold text-white">FreeCourse</Text>
+          <Text className="text-gray-100 font-medium">Learn from anywhere</Text>
+        </View>
+      </View>
+      <View className="bg-white pb-6 rounded-t-3xl">
+        <Text className="px-5 pt-5 pb-3 font-semibold text-lg">
+          Top Courses
+        </Text>
+        <ScrollView>
           <View>
-            <Text className="text-xs text-neutral-400">Deliver Now</Text>
-            <Text className="font-bold text-lg -mt-[3px]">
-              Current Location
-              <ChevronDownIcon size={20} color={"#000"} />
-            </Text>
+            <TopCourse />
           </View>
-        </View>
-        <UserIcon size={25} color={"#000"} />
+        </ScrollView>
       </View>
-      {/* Search */}
-      <View className="mx-4 flex-row space-x-4 items-center pb-2">
-        <View className="flex-row space-x-2 flex-1 bg-neutral-200 p-3">
-          <MagnifyingGlassIcon size={20} color={"#000"} />
-          <TextInput placeholder="Resturants and cuisines" />
-        </View>
-        <AdjustmentsVerticalIcon size={20} color={"#000"} />
-      </View>
-      <ScrollView></ScrollView>
     </SafeAreaView>
   );
 };

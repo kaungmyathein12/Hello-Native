@@ -1,7 +1,9 @@
 import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
-import Avatar from "react-native-boring-avatars";
+// import Avatar from "react-native-boring-avatars";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import Svg, { Mask, Rect, G, Path } from "react-native-svg";
+import Profile from "./avatar/Profile";
 
 const Header = () => {
   const navigation = useNavigation();
@@ -19,12 +21,13 @@ const Header = () => {
           }}
         >
           <View className="mt-1">
-            <Avatar
+            <Profile />
+            {/* <Avatar
               size={35}
               name="John"
               variant="beam"
               colors={["#FFAD08", "#EDD75A", "#ff6b88", "#C271B4", "#EDD75A"]}
-            />
+            /> */}
           </View>
         </TouchableOpacity>
       </View>
